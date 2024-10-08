@@ -23,7 +23,7 @@ body{
     position: absolute;
 }
 
-#taskInput, table, #addTaskBtn{
+#taskInput, table, #addTaskBtn, #saveBtn, #loadBtn{
     display: none;
 }
 

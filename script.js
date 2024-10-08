@@ -1,4 +1,4 @@
- // This is the jQuery code
+
 
  function animation() {
     $('#square')
@@ -25,26 +25,30 @@
         $("#square").stop(true);
     }
 
- $(document).ready(function() {
+localStorage.setItem('Day', 'content');
+$(document).ready(function() {
 
     $("#start").click(animation);
     $("#stop").click(stop);
 
     $("#schedule").click(function(){
+        $("body").css({"background-color": "antiquewhite"});
         $("#start").hide();
         $("#square").hide();
-        $("table").css({"display": "block"});
-        $("body").css({"background-color": "antiquewhite"});
-        $("#back").css({"display": "block"});
-        $("#addTaskBtn").css({"display": "block"});
-        $("#taskInput").css({"display": "block"});
+        $("#schedule").hide();
+        $("table").show();
+        $("#back").show();
+        $("#addTaskBtn").show();
+        $("#taskInput").show();
+        $("#saveBtn").show();
+        $("#loadBtn").show();
     })
     $("#back").click(function(){
-        $("#back").css({"display": "none"});
-        $("#taskInput").css({"display": "none"});
-        $("table").css({"display": "none"});
-        $("#addTaskBtn").css({"display": "none"});
         $("body").css({"background-color": "black"});
+        $("#back").hide();
+        $("#taskInput").hide();
+        $("table").hide();
+        $("#addTaskBtn").hide();
         $("#start").show();
         $("#square").show();
     })
@@ -75,4 +79,29 @@
         }
     })
 
+    let cellId;
+    let cellContent;
+    $("#saveBtn").click(function(){
+        const table = document.getElementById('scheduleTable'); // i have to get the table element
+        const editableCells = table.querySelectorAll('td[contenteditable="true"]'); //un array care tine informatia minte asa <td if=.. content..> cell content </td>
+        editableCells.forEach(cell => {
+            cellId = cell.id;
+            cellContent = cell.innerText;
+            localStorage.setItem(cellId,cellContent);
+        })
+
+    })
+
+    $("#loadBtn").click(function(){
+        const table = document.getElementById('scheduleTable'); // i have to get the table element
+        const editableCells = table.querySelectorAll('td[contenteditable="true"]'); //un array care tine informatia minte asa <td if=.. content..> cell content </td>
+        
+        editableCells.forEach(cell => {
+            cellId = cell.id;
+            const savedContent = localStorage.getItem(cellId);
+            if (savedContent) {
+                cell.innerText = savedContent; 
+            }
+        })
+    })
 });
