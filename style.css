@@ -56,8 +56,35 @@ td {
     height: 50px;
 }
 
+.highlighted{
+    background-color: #fde9e6;
+}
+
 input, button {
     margin: 10px;
     padding: 10px;
     font-size: 14px;
+}
+
+#flexContainer{
+    display: flex;
+}
+
+#table{
+    flex: 95%;
+}
+
+#buttonContainer{
+    flex: 5%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 60px;
+    padding-left: 20px;
+}
+
+.toggleButton{
+    background-color: green;
+    width: 10px;
+    height: 10px;
 }

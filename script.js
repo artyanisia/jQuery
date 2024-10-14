@@ -27,7 +27,7 @@
 
 localStorage.setItem('Day', 'content');
 $(document).ready(function() {
-
+    $("#buttonContainer").hide();
     $("#start").click(animation);
     $("#stop").click(stop);
 
@@ -42,6 +42,7 @@ $(document).ready(function() {
         $("#taskInput").show();
         $("#saveBtn").show();
         $("#loadBtn").show();
+        $("#buttonContainer").show();
     })
     $("#back").click(function(){
         $("body").css({"background-color": "black"});
@@ -51,6 +52,10 @@ $(document).ready(function() {
         $("#addTaskBtn").hide();
         $("#start").show();
         $("#square").show();
+        $("#schedule").show();
+        $("#saveBtn").hide();
+        $("#loadBtn").hide();
+        $("#buttonContainer").hide();
     })
     $('#addTaskBtn').click(function(){
         let taskText = $('#taskInput').val();
@@ -83,7 +88,7 @@ $(document).ready(function() {
     let cellContent;
     $("#saveBtn").click(function(){
         const table = document.getElementById('scheduleTable'); // i have to get the table element
-        const editableCells = table.querySelectorAll('td[contenteditable="true"]'); //un array care tine informatia minte asa <td if=.. content..> cell content </td>
+        const editableCells = table.querySelectorAll('td'); //un array care tine informatia minte asa <td if=.. content..> cell content </td>
         editableCells.forEach(cell => {
             cellId = cell.id;
             cellContent = cell.innerText;
@@ -103,5 +108,12 @@ $(document).ready(function() {
                 cell.innerText = savedContent; 
             }
         })
+    })
+    $(".toggleButton").click(function(){
+        var rowId = $(this).attr("data-row")
+        $("#" + rowId).slideToggle("slow");
+    })
+    $("#scheduleTable  td").dblclick(function(){
+        $(this).toggleClass("highlighted");
     })
 });

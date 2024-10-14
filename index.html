@@ -20,83 +20,95 @@
     <button id="loadBtn">Load from LocalStorage</button>
     <input type="text" id="taskInput" placeholder="Add new task">
     <button id="addTaskBtn">Add Task</button>
-    <table id="scheduleTable">
-        <thead>
-            <tr>
-                <th></th>
-                <th>LUNI</th>
-                <th>MARTI</th>
-                <th>MIERCURI</th>
-                <th>JOI</th>
-                <th>VINERI</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>7:30</td>
-                <td id="luni-7-30" contenteditable="true"></td>
-                <td id="marti-7-30" contenteditable="true"></td>
-                <td id="miercuri-7-30" contenteditable="true"></td>
-                <td id="joi-7-30" contenteditable="true"></td>
-                <td id="vineri-7-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>9:00</td>
-                <td id="luni-9-00" contenteditable="true"></td>
-                <td id="marti-9-00" contenteditable="true"></td>
-                <td id="miercuri-9-00" contenteditable="true"></td>
-                <td id="joi-9-00" contenteditable="true"></td>
-                <td id="vineri-9-00" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>10:30</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>12:00</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>13:30</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>15:00</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>16:30</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-            <tr>
-                <td>18:00</td>
-                <td id="luni-10-30" contenteditable="true"></td>
-                <td id="marti-10-30" contenteditable="true"></td>
-                <td id="miercuri-10-30" contenteditable="true"></td>
-                <td id="joi-10-30" contenteditable="true"></td>
-                <td id="vineri-10-30" contenteditable="true"></td>
-            </tr>
-        </tbody>
-    </table>
+    <div id = "flexContainer">
+        <div id="buttonContainer">
+            <button class="toggleButton" data-row="row-1"></button>
+            <button class="toggleButton" data-row="row-2"></button>
+            <button class="toggleButton" data-row="row-3"></button>
+            <button class="toggleButton" data-row="row-4"></button>
+            <button class="toggleButton" data-row="row-5"></button>
+            <button class="toggleButton" data-row="row-6"></button>
+            <button class="toggleButton" data-row="row-7"></button>
+            <button class="toggleButton" data-row="row-8"></button>
+        </div>
+        <table id="scheduleTable">
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>LUNI</th>
+                    <th>MARTI</th>
+                    <th>MIERCURI</th>
+                    <th>JOI</th>
+                    <th>VINERI</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id="row-1">
+                    <td>7:30</td>
+                    <td id="luni-7-30" contenteditable="true"></td>
+                    <td id="marti-7-30" contenteditable="true"></td>
+                    <td id="miercuri-7-30" contenteditable="true"></td>
+                    <td id="joi-7-30" contenteditable="true"></td>
+                    <td id="vineri-7-30" contenteditable="true"></td>
+                </tr>
+                <tr id="row-2">
+                    <td>9:00</td>
+                    <td id="luni-9-00" contenteditable="true"></td>
+                    <td id="marti-9-00" contenteditable="true"></td>
+                    <td id="miercuri-9-00" contenteditable="true"></td>
+                    <td id="joi-9-00" contenteditable="true"></td>
+                    <td id="vineri-9-00" contenteditable="true"></td>
+                </tr>
+                <tr id="row-3">
+                    <td>10:30</td>
+                    <td id="luni-10-30" contenteditable="true"></td>
+                    <td id="marti-10-30" contenteditable="true"></td>
+                    <td id="miercuri-10-30" contenteditable="true"></td>
+                    <td id="joi-10-30" contenteditable="true"></td>
+                    <td id="vineri-10-30" contenteditable="true"></td>
+                </tr>
+                <tr id="row-4">
+                    <td>12:00</td>
+                    <td id="luni-12-00" contenteditable="true"></td>
+                    <td id="marti-12-00" contenteditable="true"></td>
+                    <td id="miercuri-12-00" contenteditable="true"></td>
+                    <td id="joi-12-00" contenteditable="true"></td>
+                    <td id="vineri-12-00" contenteditable="true"></td>
+                </tr>
+                <tr id="row-5">
+                    <td>13:30</td>
+                    <td id="luni-13-30" contenteditable="true"></td>
+                    <td id="marti-13-30" contenteditable="true"></td>
+                    <td id="miercuri-13-30" contenteditable="true"></td>
+                    <td id="joi-13-30" contenteditable="true"></td>
+                    <td id="vineri-13-30" contenteditable="true"></td>
+                </tr>
+                <tr id="row-6">
+                    <td>15:00</td>
+                    <td id="luni-15-00" contenteditable="true"></td>
+                    <td id="marti-15-00" contenteditable="true"></td>
+                    <td id="miercuri-15-00" contenteditable="true"></td>
+                    <td id="joi-15-00" contenteditable="true"></td>
+                    <td id="vineri-15-00" contenteditable="true"></td>
+                </tr>
+                <tr id="row-7">
+                    <td>16:30</td>
+                    <td id="luni-16-30" contenteditable="true"></td>
+                    <td id="marti-16-30" contenteditable="true"></td>
+                    <td id="miercuri-16-30" contenteditable="true"></td>
+                    <td id="joi-16-30" contenteditable="true"></td>
+                    <td id="vineri-16-30" contenteditable="true"></td>
+                </tr>
+                <tr id="row-8">
+                    <td>18:00</td>
+                    <td id="luni-18-00" contenteditable="true"></td>
+                    <td id="marti-18-00" contenteditable="true"></td>
+                    <td id="miercuri-18-00" contenteditable="true"></td>
+                    <td id="joi-18-00" contenteditable="true"></td>
+                    <td id="vineri-18-00" contenteditable="true"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </body>
 </html>
